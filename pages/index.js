@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Page, Text, Card, Note, Code, Spacer } from "@geist-ui/react";
+import { Page, Text } from "@geist-ui/react";
 
 const Home = () => {
   return (
