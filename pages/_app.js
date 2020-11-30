@@ -1,11 +1,11 @@
-import { GeistProvider, CssBaseline } from "@geist-ui/react";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../theme";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <GeistProvider>
-      <CssBaseline />
+    <ThemeProvider theme={theme}>
       <Component {...pageProps} />
-    </GeistProvider>
+    </ThemeProvider>
   );
 };
 

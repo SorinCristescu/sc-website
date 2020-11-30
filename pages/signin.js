@@ -1,15 +1,11 @@
-import Head from "next/head";
-import { Page, Text } from "@geist-ui/react";
+import Layout from "../layout";
+import SigninPage from "../containers/signin";
 
 const Signin = () => {
   return (
-    <Page>
-      <Head>
-        <title>Sorin Cristescu website</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Text h1>Sign in page </Text>
-    </Page>
+    <Layout title="Sign in">
+      <SigninPage />
+    </Layout>
   );
 };
 
