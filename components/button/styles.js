@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.button`
   width: auto;
+  min-width: ${(props) => props.minWidth};
   height: auto;
   padding: 14px 26px;
   border: 1px solid ${(props) => props.theme.colors.foreground};

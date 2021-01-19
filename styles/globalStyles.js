@@ -149,6 +149,11 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.colors.background};
   }
 
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
   a {
     color: inherit;
     text-decoration: none;
@@ -164,7 +169,7 @@ h1 {
     font-weight: 900;
     font-size: 103px;
     letter-spacing: 0.79;
-    line-height: 124px;
+    line-height: 103px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color:  ${(props) => props.theme.colors.foreground};
     -webkit-text-fill-color: transparent;
