@@ -1,12 +1,23 @@
-import { GeistProvider, CssBaseline } from "@geist-ui/react";
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle } from '../styles/globalStyles';
+import { darkTheme, lightTheme } from './../styles/theme';
+import Layout from '../layout';
 
-const MyApp = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }) => {
+  const [theme, setTheme] = useState(darkTheme);
+  const switchThemes = () => {
+    setTheme(theme === darkTheme ? lightTheme : darkTheme);
+  };
+
   return (
-    <GeistProvider>
-      <CssBaseline />
-      <Component {...pageProps} />
-    </GeistProvider>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Layout theme={theme} switchThemes={switchThemes}>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   );
 };
 
-export default MyApp;
+export default App;

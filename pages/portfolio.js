@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 
-const Estimator = (props) => {
+const Portfolio = (props) => {
   return (
     <div>
       <Head>
@@ -9,10 +9,10 @@ const Estimator = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Estimator Page</h1>
+        <h1>Portfolio Page</h1>
       </main>
     </div>
   );
 };
 
-export default Estimator;
+export default Portfolio;
