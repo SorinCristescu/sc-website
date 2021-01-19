@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styled from 'styled-components';
+import { VFXSpan } from 'react-vfx';
 
 import Button from '../components/button';
 import Carousel from '../components/carousel';
@@ -53,10 +54,11 @@ const Home = (props) => {
         <Section>
           <HeroContainer>
             <h1>
-              I design unique
+              I design <VFXSpan shader="glitch">unique</VFXSpan>
               <br />
               web experience
             </h1>
+
             <svg
               width="350px"
               height="3px"

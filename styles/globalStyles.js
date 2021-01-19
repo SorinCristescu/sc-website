@@ -147,6 +147,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Barlow', sans-serif;
     background-color: ${(props) => props.theme.colors.background};
+    cursor: none;
   }
 
   * {
@@ -176,9 +177,11 @@ h1 {
   }
 
 h2 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-style: semibold;
-  font-weight: 600;
+  font-style: black;
+    font-weight: 900;
+    font-size: 103px;
+    letter-spacing: 0.79;
+    line-height: 103px;
   color: ${(props) => props.theme.colors.foreground}
 }
 

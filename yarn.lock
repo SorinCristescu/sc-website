@@ -3237,7 +3237,7 @@
     "minimist" "^1.2.0"
     "strip-json-comments" "~2.0.1"
 
-"react-dom@>= 16.8.0", "react-dom@17.0.1":
+"react-dom@>= 16.12.0", "react-dom@>= 16.8.0", "react-dom@17.0.1":
   "integrity" "sha512-6eV150oJZ9U2t9svnsspTMrWNyHc6chX0KzDeAOXftRa8bNeOKTTfCJ7KorIwenkHd2xqVTBTCZd79yk/lx/Ug=="
   "resolved" "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.1.tgz"
   "version" "17.0.1"
@@ -3256,7 +3256,14 @@
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz"
   "version" "0.8.3"
 
-"react@>= 16.8.0", "react@17.0.1":
+"react-vfx@^0.4.1":
+  "integrity" "sha512-SMUE6QtZk7G7+Fqhqgl0hY2/ExxmkjUViesgZFgXGoZEIh4TlOW2pdw/0sBPcnN0ywU4aAMj07SdbykOTcVyFQ=="
+  "resolved" "https://registry.npmjs.org/react-vfx/-/react-vfx-0.4.1.tgz"
+  "version" "0.4.1"
+  dependencies:
+    "three" "^0.111.0"
+
+"react@>= 16.12.0", "react@>= 16.8.0", "react@17.0.1":
   "integrity" "sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w=="
   "resolved" "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz"
   "version" "17.0.1"
@@ -4036,6 +4043,11 @@
     "commander" "^2.20.0"
     "source-map" "~0.6.1"
     "source-map-support" "~0.5.12"
+
+"three@^0.111.0":
+  "integrity" "sha512-AcTqyGJ3H75AIusOuADy0LsP958QKQwm/YhABHFMzd6RFXPNVay1rlSbbG6WYv7KM72G2THMMwqbjQd4dVHMkQ=="
+  "resolved" "https://registry.npmjs.org/three/-/three-0.111.0.tgz"
+  "version" "0.111.0"
 
 "through2@^2.0.0":
   "integrity" "sha512-/mrRod8xqpA+IHSLyGCQ2s8SPHiCDEeQJSep1jqLYeEUClOFG2Qsh+4FU6G9VeqpZnGW/Su8LQGc4YKni5rYSQ=="
