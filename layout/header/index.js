@@ -7,13 +7,7 @@ const Header = (props) => {
   const handleClick = () => {
     console.log('click');
   };
-  const handleFill = () => {
-    if (theme === 'darkTheme') {
-      return '#FFFFFF';
-    } else if (theme === 'lightTheme') {
-      return '#4802ff';
-    }
-  };
+
   return (
     <Container>
       <Link href="/">

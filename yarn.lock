@@ -1893,6 +1893,11 @@
   "resolved" "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.4.tgz"
   "version" "4.2.4"
 
+"gsap@^3.6.0":
+  "integrity" "sha512-0P3syv1TmYr+A/VZ8UMFzw+s0XoaKSzzDFs8NqkXiJTXI4E/VTi0zRjPgxaPBpiUPPycgRnFjLDe0Tb4dRRf+w=="
+  "resolved" "https://registry.npmjs.org/gsap/-/gsap-3.6.0.tgz"
+  "version" "3.6.0"
+
 "has-flag@^3.0.0":
   "integrity" "sha1-tdRU3CGZriJWmfNGfloH87lVuv0="
   "resolved" "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz"

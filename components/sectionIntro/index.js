@@ -14,7 +14,7 @@ const SectionIntro = (props) => {
     <Container>
       <Intro>
         <svg
-          width="80px"
+          width="71px"
           height="1px"
           viewBox="0 0 80 1"
           version="1.1"

@@ -8,7 +8,9 @@ export const Container = styled.header`
   justify-content: space-between;
   align-items: center;
   /* position: fixed;
-  top: 0; */
+  top: 0;
+  left: 0;
+  right: 0; */
 
   nav {
     width: 50%auto;

@@ -8,7 +8,6 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
-
   max-width: 1224px;
   margin: 0 auto;
   color: ${(props) => props.theme.colors.foreground};
@@ -16,4 +15,5 @@ export const Wrapper = styled.div`
 
 export const Main = styled.div`
   width: 100%;
+  margin-left: 80px;
 `;
