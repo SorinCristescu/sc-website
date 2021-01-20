@@ -11,7 +11,7 @@ export const CursorContainer = styled.div`
   position: fixed;
   transform: translate(-50%, -50%) ${(props) => props.scale};
   pointer-events: none;
-  z-index: 9999;
+  z-index: 19999;
   mix-blend-mode: difference;
   left: ${(props) => props.position.x}px;
   top: ${(props) => props.position.y}px;

@@ -3,10 +3,7 @@ import Button from '../../components/button';
 import { Container, SVG } from './styles';
 
 const Header = (props) => {
-  const { switchThemes, theme } = props;
-  const handleClick = () => {
-    console.log('click');
-  };
+  const { switchThemes, theme, handleMenu } = props;
 
   return (
     <Container>
@@ -60,7 +57,7 @@ const Header = (props) => {
         </SVG>
 
         <SVG
-          onClick={handleClick}
+          onClick={handleMenu}
           width="20px"
           height="15px"
           viewBox="0 0 20 17"

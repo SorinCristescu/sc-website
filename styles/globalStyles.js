@@ -189,6 +189,10 @@ h3 {
   font-family: 'Barlow Condensed', sans-serif;
   font-style: semibold;
   font-weight: 600;
+  font-size: 45px;
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color:  ${(props) => props.theme.colors.foreground};
+  -webkit-text-fill-color: transparent; */
   color: ${(props) => props.theme.colors.foreground}
 }
 
