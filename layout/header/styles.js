@@ -20,5 +20,5 @@ export const Container = styled.header`
 
 export const SVG = styled.svg`
   margin-left: 25px;
-  cursor: pointer;
+  /* cursor: pointer; */
 `;

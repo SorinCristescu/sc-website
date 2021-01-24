@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-
+import PageTitle from '../components/pageTitle';
 const Blog = (props) => {
   return (
     <div>
@@ -9,7 +9,7 @@ const Blog = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Blog Page</h1>
+        <PageTitle title="blog" />
       </main>
     </div>
   );

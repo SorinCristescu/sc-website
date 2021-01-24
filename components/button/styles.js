@@ -19,6 +19,5 @@ export const Container = styled.button`
   &:hover {
     background-color: ${(props) => props.theme.colors.foreground};
     color: ${(props) => props.theme.colors.background};
-    cursor: pointer;
   }
 `;

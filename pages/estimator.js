@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-
+import PageTitle from '../components/pageTitle';
 const Estimator = (props) => {
   return (
     <div>
@@ -9,7 +9,7 @@ const Estimator = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Estimator Page</h1>
+        <PageTitle title="estimator" />
       </main>
     </div>
   );

@@ -71,6 +71,7 @@ const Carousel = ({ content, minWidth }) => {
       />
       <Navigation>
         <svg
+          className="svg-hoverable prev"
           onClick={handlePrev}
           width="17px"
           height="6px"
@@ -105,6 +106,7 @@ const Carousel = ({ content, minWidth }) => {
           </g>
         </svg>
         <svg
+          className="svg-hoverable next"
           onClick={handleNext}
           width="17px"
           height="6px"
@@ -118,7 +120,7 @@ const Carousel = ({ content, minWidth }) => {
             stroke="none"
             strokeWidth="1"
             fill="none"
-            fill-rule="evenodd"
+            fillRule="evenodd"
           >
             <g
               id="Desktop-HD"

@@ -5,6 +5,7 @@ import { VFXSpan } from 'react-vfx';
 import Button from '../components/button';
 import Carousel from '../components/carousel';
 import SectionIntro from '../components/sectionIntro';
+import Hero from '../components/hero';
 
 const Section = styled.section`
   width: 100%;
@@ -13,9 +14,19 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  position: relative;
 `;
 const HeroContainer = styled.div`
-  width: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  .text {
+    z-index: 3;
+  }
 `;
 const contentHeroSection = [
   {
@@ -53,39 +64,48 @@ const Home = (props) => {
       <main>
         <Section>
           <HeroContainer>
-            <h1>
-              I design <VFXSpan shader="glitch">unique</VFXSpan>
-              <br />
-              web experience
-            </h1>
+            <div className="text">
+              <h1>
+                I design unique
+                <br />
+                web experience
+              </h1>
 
-            <svg
-              width="350px"
-              height="3px"
-              viewBox="0 0 476 3"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-            >
-              <g
-                id="Home"
-                stroke="none"
-                strokeWidth="1"
-                fill="none"
-                fillRule="evenodd"
+              <svg
+                width="350px"
+                height="3px"
+                viewBox="0 0 476 3"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
               >
                 <g
-                  id="Desktop-HD"
-                  transform="translate(-508.000000, -562.000000)"
-                  stroke="#FFFFFF"
-                  strokeWidth="2"
+                  id="Home"
+                  stroke="none"
+                  strokeWidth="1"
+                  fill="none"
+                  fillRule="evenodd"
                 >
-                  <line x1="508" y1="563" x2="984" y2="563.5" id="Path"></line>
+                  <g
+                    id="Desktop-HD"
+                    transform="translate(-508.000000, -562.000000)"
+                    stroke="#FFFFFF"
+                    strokeWidth="2"
+                  >
+                    <line
+                      x1="508"
+                      y1="563"
+                      x2="984"
+                      y2="563.5"
+                      id="Path"
+                    ></line>
+                  </g>
                 </g>
-              </g>
-            </svg>
-            <p>creator of disruptive world-class experience</p>
-            <Carousel content={contentHeroSection} minWidth="300px" />
+              </svg>
+              <p>creator of disruptive world-class experience</p>
+              <Carousel content={contentHeroSection} minWidth="300px" />
+            </div>
+            <Hero />
           </HeroContainer>
         </Section>
         <Section>

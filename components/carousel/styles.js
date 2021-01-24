@@ -1,4 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const slide = keyframes`
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 0);
+  }
+`;
 
 export const Container = styled.div`
   margin: 50px 0;
@@ -36,7 +47,14 @@ export const Navigation = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  svg {
+  /* svg {
     cursor: pointer;
+  } */
+  .prev:hover {
+    animation: ${slide} 1.5s ease-in-out infinite;
+  }
+
+  .next:hover {
+    animation: ${slide} 1.5s ease-in-out infinite;
   }
 `;
