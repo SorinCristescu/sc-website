@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import UIfx from 'uifx';
 
 // Components
 import ReactAudioPlayer from 'react-audio-player';
@@ -16,7 +15,6 @@ const Layout = (props) => {
   const { children, switchThemes, theme } = props;
   const [openMenu, setOpenMenu] = useState(false);
   const [muted, setMuted] = useState(false);
-  // const [play, setPlay] = useState(true);
 
   // const beep = new UIfx('/sounds/fun_tone.mp3');
   // const beep = new UIfx({ asset: '/sounds/fun_tone.mp3' });
@@ -27,7 +25,6 @@ const Layout = (props) => {
 
   const handleMuted = () => {
     setMuted(!muted);
-    // setPlay(!play);
   };
 
   return (
@@ -36,7 +33,6 @@ const Layout = (props) => {
         src="/sounds/deepblue.mp3"
         autoPlay
         muted={muted}
-        // controls
         volume={1}
         loop
       />
