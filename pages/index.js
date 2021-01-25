@@ -1,3 +1,5 @@
+import React, { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { VFXSpan } from 'react-vfx';
@@ -54,6 +56,61 @@ const contentHeroSection = [
 ];
 
 const Home = (props) => {
+  const title = useRef(null);
+  const line = useRef(null);
+  const subtitle = useRef(null);
+  const sphere = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      [title.current, subtitle.current],
+      {
+        duration: 1,
+        y: '100px',
+        opacity: 0,
+      },
+      {
+        delay: 2,
+        duration: 1,
+        y: '0%',
+        opacity: 1,
+        ease: 'power3.inOut',
+        stagger: {
+          amount: 0.5,
+        },
+      }
+    );
+    gsap.fromTo(
+      line.current,
+
+      {
+        duration: 1,
+        x: '-200px',
+        opacity: 0,
+      },
+      {
+        delay: 2.5,
+        duration: 1,
+        x: '0',
+        opacity: 1,
+        ease: 'power3.inOut',
+      }
+    );
+    gsap.fromTo(
+      sphere.current,
+      {
+        duration: 1,
+        opacity: 0,
+      },
+      {
+        duration: 1,
+        opacity: 1,
+
+        ease: 'power3.inOut',
+      }
+    );
+  }, [title, line, subtitle]);
+
   return (
     <div>
       <Head>
@@ -65,13 +122,14 @@ const Home = (props) => {
         <Section>
           <HeroContainer>
             <div className="text">
-              <h1>
+              <h1 ref={title}>
                 I design unique
                 <br />
                 web experience
               </h1>
 
               <svg
+                ref={line}
                 width="350px"
                 height="3px"
                 viewBox="0 0 476 3"
@@ -102,10 +160,12 @@ const Home = (props) => {
                   </g>
                 </g>
               </svg>
-              <p>creator of disruptive world-class experience</p>
+              <p ref={subtitle}>creator of disruptive world-class experience</p>
               <Carousel content={contentHeroSection} minWidth="300px" />
             </div>
-            <Hero />
+            <div ref={sphere}>
+              <Hero />
+            </div>
           </HeroContainer>
         </Section>
         <Section>

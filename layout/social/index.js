@@ -1,13 +1,50 @@
+import React, { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 import Link from 'next/link';
 
 import { Container } from './styles';
 
 const SocialMedia = (props) => {
   const { theme } = props;
+  const facebook = useRef(null);
+  const instagram = useRef(null);
+  const behance = useRef(null);
+  const dribbble = useRef(null);
+  const github = useRef(null);
+  const linkedin = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      [
+        facebook.current,
+        instagram.current,
+        dribbble.current,
+        behance.current,
+        linkedin.current,
+        github.current,
+      ],
+      {
+        duration: 1,
+        x: '100%',
+        opacity: 0,
+      },
+      {
+        duration: 1,
+        x: '0%',
+        opacity: 1,
+        ease: 'power3.inOut',
+        stagger: {
+          amount: 0.5,
+        },
+        delay: 1,
+      }
+    );
+  }, [facebook, instagram, behance, dribbble, github, linkedin]);
+
   return (
     <Container>
       <Link href="/facebook">
-        <a>
+        <a ref={facebook}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -22,7 +59,7 @@ const SocialMedia = (props) => {
         </a>
       </Link>
       <Link href="/instagram">
-        <a>
+        <a ref={instagram}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -37,7 +74,7 @@ const SocialMedia = (props) => {
         </a>
       </Link>
       <Link href="/dribbble">
-        <a>
+        <a ref={dribbble}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -52,7 +89,7 @@ const SocialMedia = (props) => {
         </a>
       </Link>
       <Link href="/behance">
-        <a>
+        <a ref={behance}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -67,7 +104,7 @@ const SocialMedia = (props) => {
         </a>
       </Link>
       <Link href="/linkedin">
-        <a>
+        <a ref={linkedin}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -82,7 +119,7 @@ const SocialMedia = (props) => {
         </a>
       </Link>
       <Link href="/github">
-        <a>
+        <a ref={github}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"

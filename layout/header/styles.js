@@ -14,7 +14,10 @@ export const Container = styled.header`
 
   nav {
     width: 50%auto;
-    height: 100%auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 `;
 

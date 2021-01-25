@@ -1,7 +1,27 @@
-import Link from 'next/link';
+import React, { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 
 import { SVG } from './styles';
 const Scroll = (props) => {
+  const scroll = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      [scroll.current],
+      {
+        duration: 1,
+        x: '50px',
+        opacity: 0,
+      },
+      {
+        duration: 1,
+        x: '0',
+        opacity: 1,
+        ease: 'power3.inOut',
+      }
+    );
+  }, [scroll]);
+
   return (
     <SVG
       width="7px"
@@ -11,7 +31,14 @@ const Scroll = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <g id="Home" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+      <g
+        ref={scroll}
+        id="Home"
+        stroke="none"
+        strokeWidth="1"
+        fill="none"
+        fillRule="evenodd"
+      >
         <g
           id="Desktop-HD"
           transform="translate(-1305.000000, -900.000000)"

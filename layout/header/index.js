@@ -1,14 +1,47 @@
+import React, { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 import Link from 'next/link';
 import Button from '../../components/button';
 import { Container, SVG } from './styles';
 
 const Header = (props) => {
   const { switchThemes, theme, handleMenu, handleMuted, muted } = props;
+  const logo = useRef(null);
+  const sound = useRef(null);
+  const evaluator = useRef(null);
+  const dark = useRef(null);
+  const ham = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      [
+        logo.current,
+        evaluator.current,
+        sound.current,
+        dark.current,
+        ham.current,
+      ],
+      {
+        duration: 1.5,
+        y: '-100%',
+        opacity: 0,
+      },
+      {
+        duration: 1.5,
+        y: '0%',
+        opacity: 1,
+        ease: 'power3.inOut',
+        stagger: {
+          amount: 0.5,
+        },
+      }
+    );
+  }, [logo, sound, evaluator, dark, ham]);
 
   return (
     <Container>
       <Link href="/">
-        <a>
+        <a ref={logo}>
           <h6>
             SORIN CRISTESCU
             <br />
@@ -18,8 +51,14 @@ const Header = (props) => {
           </h6>
         </a>
       </Link>
-      <div>
+
+      <nav>
+        <div ref={evaluator}>
+          <Button link path="/estimator" name="estimate project" />
+        </div>
+        {/* <div> */}
         <SVG
+          ref={sound}
           onClick={handleMuted}
           className="svg-hoverable"
           xmlns="http://www.w3.org/2000/svg"
@@ -39,10 +78,9 @@ const Header = (props) => {
             />
           )}
         </SVG>
-      </div>
-      <nav>
-        <Button link path="/estimator" name="estimate project" />
+        {/* </div> */}
         <SVG
+          ref={dark}
           className="svg-hoverable"
           onClick={switchThemes}
           width="20px"
@@ -80,6 +118,7 @@ const Header = (props) => {
         </SVG>
 
         <SVG
+          ref={ham}
           className="svg-hoverable"
           onClick={handleMenu}
           width="20px"
