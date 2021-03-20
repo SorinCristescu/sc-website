@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -17,6 +19,10 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     default: "user",
+  },
+  language: {
+    type: String,
+    default: "english",
   },
   root: {
     type: Boolean,

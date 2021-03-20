@@ -25,14 +25,14 @@ const Input = (props) => {
           onChange={handleChange}
           onBlur={handleBlur}
         ></input>
-        <label
+        {/* <label
         // htmlFor={id}
         >
           {label}
         </label>
         <span class="focus-border">
           <i></i>
-        </span>
+        </span> */}
       </Container>
       {error && <ErrorText>{errorText}</ErrorText>}
     </>

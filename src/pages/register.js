@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Head from "next/head";
 import { Formik, Field } from "formik";
 import * as yup from "yup";
+import { register } from "../store/auth/actions";
+import { useDispatch } from "react-redux";
 
 import styled from "styled-components";
 
@@ -27,10 +29,10 @@ const Form = styled.form`
 `;
 
 const validationSchema = yup.object({
-  name: yup.string().required().max(15),
-  email: yup.string().required().max(15),
-  password: yup.string().required().max(15),
-  confirmedPassword: yup.string().required().max(15),
+  name: yup.string().required().max(30),
+  email: yup.string().required(),
+  password: yup.string().required().min(6),
+  confirmedPassword: yup.string().required().min(6),
 });
 
 const Register = (props) => {
@@ -43,7 +45,7 @@ const Register = (props) => {
   const [userData, setUserData] = useState(initialState);
   // const [error, setError] = useState(null);
   const { name, email, password, confirmedPassword } = userData;
-
+  const dispatch = useDispatch();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
@@ -51,6 +53,12 @@ const Register = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(userData);
+    const newUser = {
+      name,
+      email,
+      password,
+    };
+    dispatch(register(newUser));
     setUserData(initialState);
   };
   return (
@@ -108,7 +116,7 @@ const Register = (props) => {
                   label="Email"
                   type="email"
                   id="email"
-                  name="name"
+                  name="email"
                   value={values.email}
                   handleChange={handleChange}
                   handleBlur={handleBlur}
