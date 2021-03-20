@@ -1,8 +1,18 @@
-import Link from 'next/link';
-import { Container } from './styles';
+import PropTypes from "prop-types";
+import Link from "next/link";
+import { Container } from "./styles";
 
 const Button = (props) => {
-  const { children, link, icon, name, onClick, path, minWidth } = props;
+  const {
+    children,
+    link,
+    icon,
+    name,
+    onClick,
+    path,
+    minWidth,
+    disabled,
+  } = props;
   return (
     <Container onClick={!link ? onClick : null} minWidth={minWidth}>
       {link ? (
@@ -17,6 +27,16 @@ const Button = (props) => {
       )}
     </Container>
   );
+};
+
+Button.propTypes = {
+  disabled: PropTypes.bool,
+  children: PropTypes.element.isRequired,
+  link: PropTypes.string.isRequired,
+  icon: PropTypes.bool.isRequired,
+  path: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  minWidth: PropTypes.string.isRequired,
 };
 
 export default Button;

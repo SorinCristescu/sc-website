@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-
-import { Container, Intro } from './styles';
+import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+import { Container, Intro } from "./styles";
 
 const SectionIntro = (props) => {
-  const { children, intro, title, text } = props;
+  const { children, intro, title, texts } = props;
 
   const titleAnimation = useRef(null);
   const textAnimation = useRef(null);
@@ -45,17 +45,27 @@ const SectionIntro = (props) => {
         <h6>{intro}</h6>
       </Intro>
 
-      <h4 ref={titleAnimation} style={{ margin: '30px 0 0 0' }}>
+      <h4 ref={titleAnimation} style={{ margin: "30px 0 50px 0" }}>
         {title}
       </h4>
-
-      <p ref={textAnimation} style={{ margin: '30px 0' }}>
-        {text}
-      </p>
+      {texts.map((text, index) => {
+        return (
+          <p key={index} style={{ margin: "10px 0" }}>
+            {text}
+          </p>
+        );
+      })}
 
       {children}
     </Container>
   );
+};
+
+SectionIntro.propTypes = {
+  intro: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  texts: PropTypes.array.isRequired,
+  children: PropTypes.element,
 };
 
 export default SectionIntro;

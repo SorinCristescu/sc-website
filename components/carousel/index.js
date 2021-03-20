@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import Button from '../button';
-import { Container, Counter, Navigation } from './styles';
+import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+import Link from "next/link";
+import Button from "../button";
+import { Container, Counter, Navigation } from "./styles";
 
 const Carousel = ({ content, minWidth }) => {
   const { title, subtitle, path, id, linkName } = content;
@@ -55,12 +56,12 @@ const Carousel = ({ content, minWidth }) => {
           </g>
         </svg>
       </Counter>
-      {content[current].title === '' ? null : (
-        <h4 ref={titleAnimation} style={{ margin: '30px 0 0 0' }}>
+      {content[current].title === "" ? null : (
+        <h4 ref={titleAnimation} style={{ margin: "30px 0 0 0" }}>
           {content[current].title}
         </h4>
       )}
-      <p ref={subtitleAnimation} style={{ margin: '30px 0' }}>
+      <p ref={subtitleAnimation} style={{ margin: "30px 0" }}>
         {content[current].subtitle}
       </p>
       <Button
@@ -143,6 +144,11 @@ const Carousel = ({ content, minWidth }) => {
       </Navigation>
     </Container>
   );
+};
+
+Carousel.propTypes = {
+  content: PropTypes.array.isRequired,
+  minWidth: PropTypes.string.isRequired,
 };
 
 export default Carousel;

@@ -1,7 +1,8 @@
-import { Container } from './styles';
+import PropTypes from "prop-types";
+import { Container } from "./styles";
 
 const PageTitle = ({ title }) => {
-  const letters = title.split('');
+  const letters = title.split("");
   console.log(letters);
   return (
     <Container>
@@ -10,6 +11,10 @@ const PageTitle = ({ title }) => {
       })}
     </Container>
   );
+};
+
+PageTitle.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default PageTitle;

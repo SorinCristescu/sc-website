@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const sphere = keyframes`
   0% {
@@ -2610,7 +2610,7 @@ export const HeroContainer = styled.div`
     height: 80%;
     border: 1px solid #fff;
     border-radius: 100%;
-    background: rgba(65, 1, 232, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     animation: ${sphere} 3000ms cubic-bezier(0.215, 0.61, 0.355, 1) alternate
         infinite,
       ${color} 5000ms linear alternate infinite;

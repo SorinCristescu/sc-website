@@ -1,14 +1,15 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from "react";
+
+import { Canvas } from "./styles";
 
 const Noise = () => {
-  const container = useRef(null);
-  let canvas, ctx;
-
-  let wWidth, wHeight;
-
+  const noise = useRef(null);
+  let canvas;
+  let ctx;
+  let wWidth;
+  let wHeight;
   let noiseData = [];
   let frame = 0;
-
   let loopTimeout;
 
   // Create Noise
@@ -16,16 +17,13 @@ const Noise = () => {
     const idata = ctx.createImageData(wWidth, wHeight);
     const buffer32 = new Uint32Array(idata.data.buffer);
     const len = buffer32.length;
-
     for (let i = 0; i < len; i++) {
       if (Math.random() < 0.5) {
         buffer32[i] = 0xff000000;
       }
     }
-
     noiseData.push(idata);
   };
-
   // Play Noise
   const paintNoise = () => {
     if (frame === 9) {
@@ -33,10 +31,8 @@ const Noise = () => {
     } else {
       frame++;
     }
-
     ctx.putImageData(noiseData[frame], 0, 0);
   };
-
   // Loop
   const loop = () => {
     paintNoise(frame);
@@ -45,27 +41,22 @@ const Noise = () => {
       window.requestAnimationFrame(loop);
     }, 1000 / 25);
   };
-
   // Setup
   const setup = () => {
-    wWidth = window.innerWidth;
-    wHeight = window.innerHeight;
-
+    wWidth = window.innerWidth * 1.5;
+    wHeight = window.innerHeight * 1.5;
     canvas.width = wWidth;
     canvas.height = wHeight;
-
     for (let i = 0; i < 10; i++) {
       createNoise();
     }
-
     loop();
   };
-
   // Reset
   let resizeThrottle;
   const reset = () => {
     window.addEventListener(
-      'resize',
+      "resize",
       () => {
         window.clearTimeout(resizeThrottle);
 
@@ -77,20 +68,17 @@ const Noise = () => {
       false
     );
   };
-
   // Init
   const init = () => {
-    canvas = container.current;
-    ctx = canvas.getContext('2d');
-
+    canvas = noise.current;
+    ctx = canvas.getContext("2d");
     setup();
   };
-
   useEffect(() => {
     init();
   }, []);
 
-  return <div style={{ width: '100%', height: '100vh' }} ref={container}></div>;
+  return <Canvas ref={noise}></Canvas>;
 };
 
 export default Noise;

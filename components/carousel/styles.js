@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const slide = keyframes`
   0%,
@@ -44,6 +44,7 @@ export const Navigation = styled.div`
   width: 100%;
   height: auto;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 

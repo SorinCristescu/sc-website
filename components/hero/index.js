@@ -1,4 +1,5 @@
-import { HeroContainer } from './styles';
+import PropTypes from "prop-types";
+import { HeroContainer } from "./styles";
 
 const triggers = Array.from(Array(400), (_, x) => x);
 const circles = Array.from(Array(20), (_, x) => x);
@@ -32,4 +33,5 @@ const Hero = () => {
   );
 };
 
+Hero.propTypes = {};
 export default Hero;

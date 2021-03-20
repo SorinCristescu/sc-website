@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import styled from 'styled-components';
+import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 /* Barlow font
@@ -160,11 +160,6 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
 }
 
-/* main {
-  width: 100%;
-  height: auto;
-} */
-
 h1 {
     font-style: black;
     font-weight: 900;
@@ -182,7 +177,9 @@ h2 {
     font-size: 103px;
     letter-spacing: 0.79;
     line-height: 103px;
-  color: ${(props) => props.theme.colors.foreground}
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:  ${(props) => props.theme.colors.background};
+    -webkit-text-fill-color: transparent;
 }
 
 h3 {

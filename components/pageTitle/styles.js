@@ -1,11 +1,11 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const move = keyframes`
     0% {
         transform: translate(-25%, 0);
    }
     50% {
-        text-shadow: 0 15px 40px rgba(11, 0, 38, 0.6);
+        text-shadow: 0 15px 50px rgba(255, 255, 255, 0.7);
    }
     100% {
         transform: translate(33%, 0);
@@ -19,10 +19,10 @@ export const Container = styled.div`
   line-height: 1;
 
   h2 {
-    font-size: 130px;
+    // font-size: 160px;
     display: inline-block;
-    color: #4802ff;
-    animation: ${move} 2s ease-in-out infinite;
+    color: #000000;
+    animation: ${move} 6s ease-in-out infinite;
   }
 
   h2:nth-child(2) {

@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 // Components
-import ReactAudioPlayer from 'react-audio-player';
-import Header from './header';
-import Footer from './footer';
-import Noise from './noise';
-import Menu from './menu';
-import Cursor from './cursor';
-import Scroll from './scroll';
-import SocialMedia from './social';
-import { Container, Wrapper, Main } from './styles';
+import ReactAudioPlayer from "react-audio-player";
+import Header from "./header";
+import Footer from "./footer";
+import Noise from "./noise";
+
+import Menu from "./menu";
+import Cursor from "./cursor";
+import Scroll from "./scroll";
+import SocialMedia from "./social";
+import { Container, Wrapper, Main } from "./styles";
 
 const Layout = (props) => {
   const { children, switchThemes, theme } = props;
@@ -36,9 +37,9 @@ const Layout = (props) => {
         volume={1}
         loop
       />
+      <Noise />
       <Cursor />
       <Wrapper>
-        {/* <Noise /> */}
         <Menu handleMenu={handleMenu} openMenu={openMenu} />
         <Header
           handleMuted={handleMuted}
